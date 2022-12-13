@@ -1,0 +1,29 @@
+const dotenv = require("dotenv")
+dotenv.config()
+const express = require('express')
+const app = express()
+const port = 8000;
+const cors = require('cors')
+require('./DB')
+const passport = require('passport')
+const passportMiddelWare = require('./config/passport-midellwear')(passport)
+const usersRoute = require('./routes/users-router')
+
+app.use(express.json({express: true}))
+app.use(express.urlencoded({extended: true}))
+app.use(cors())
+app.use(passport.initialize())
+
+
+app.use('/users', usersRoute);
+// app.use('/flights',flightRoute);
+
+ app .get('/',(req,res)=>{
+    res.send({massage:"get data successflully"})
+ })
+//  process.on('warning', (warning) => {
+//    console.log(warning.stack);
+// });
+ app.listen(port,()=>{
+    console.log(`server is connected to ${port}`);
+ })

@@ -11,7 +11,7 @@ async function main() {
         const productsCollection = client.db("delivery-app").collection("products");
         const categoriesCollection = client.db("delivery-app").collection("categories");
 
-        productsCollection.drop();
+        // productsCollection.drop();
         let categories = ['breakfast', 'lunch', 'dinner', 'drinks'].map((category) => { return { name: category } });
         await categoriesCollection.insertMany(categories);
 

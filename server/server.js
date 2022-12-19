@@ -18,8 +18,8 @@ app.use(passport.initialize())
 main()
 
 
-app.use('/users', usersRoute);
-app.use('/products/', productRoutes);
+app.use('/api/users', usersRoute);
+app.use('/api/products/', productRoutes);
 // app.use('/flights',flightRoute);
 
  app.get('/',(req,res)=>{

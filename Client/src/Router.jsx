@@ -5,6 +5,7 @@ import LoginForm from './Components/Features/logIn/LogIn'
 import Map, { GoogleHomeMap } from './Components/Features/Map/Map'
 import RegisterForm from './Components/Features/Register/Register'
 import LandingPage from './Components/Pages/LandingPage/LandingPage'
+import Orders from './Components/Pages/Orders/Orders'
 import Products from './Components/Pages/Products/Products'
 import Profile from './Components/Pages/Profile/Profile'
 
@@ -13,7 +14,7 @@ export default function Router() {
         <div>
          
                 <Routes>
-                    <Route path='/' element={<LandingPage />} />
+                    <Route path='/' element={<Orders />} />
                     <Route path='products' element={<Products />} />
                     <Route path='profile' element={<Profile />} />
                     <Route path='logIn' element={<LoginForm />} />

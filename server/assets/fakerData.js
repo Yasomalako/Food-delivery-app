@@ -16,7 +16,7 @@ async function main() {
         await categoriesCollection.insertMany(categories);
 
         let products = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 2; i++) {
             let newProduct = {
                 name: faker.commerce.productName(),
                 adjective: faker.commerce.productAdjective(),
@@ -25,6 +25,7 @@ async function main() {
                 category: _.sample(categories)
 
             };
+            console.log(products);
             products.push(newProduct)
 
         }

@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+mongoose.set('strictQuery',true)
+
 mongoose.connect('mongodb+srv://yasomalako:0506522015@cluster0.nt0itcx.mongodb.net/delivery-app?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,

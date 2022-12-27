@@ -9,13 +9,16 @@ const passport = require('passport')
 const passportMiddelWare = require('./config/passport-midellwear')(passport)
 const usersRoute = require('./routes/users-router')
 const productRoutes = require('./routes/products-route')
-const {main} = require('./assets/fakerData')
+const {main} = require('./assets/fakerData');
+const mongoose  = require("mongoose");
+
 
 app.use(express.json({express: true}))
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 app.use(passport.initialize())
-main()
+// main()
+mongoose.set('strictQuery',true)
 
 
 app.use('/api/users', usersRoute);

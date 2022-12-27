@@ -4,6 +4,7 @@ import Navbar from './Components/Features/Header/Header';
 // import RegisterForm from './Components/Features/Register/Register';
 import Router from './Router';
 import {BrowserRouter} from 'react-router-dom'
+import Footer from './Components/Features/footer/footer';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Router/>
+      <Footer/>
       {/* <RegisterForm/> */}
       {/* <LoginForm/> */}
       </BrowserRouter>

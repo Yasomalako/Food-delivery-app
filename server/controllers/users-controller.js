@@ -6,6 +6,7 @@ const registerInputValidation = require('../validation/userRegister-Validation')
 const jwt = require('jsonwebtoken')
 
 
+
 const register = async (req, res) => {
     const { isValid, errors } = registerInputValidation(req.body.user);
     if (!isValid) return res.status(400).json(errors)
@@ -33,7 +34,7 @@ const logIn = async (req, res) => {
     if (!isValid) return res.status(400).json(errors)
     const email = req.body.user.email;
     const password = req.body.user.password;
-    userModel.findOne({ email })
+  await  userModel.findOne({ email })
         .then(user => {
             if (!user) {
                 return res.status(404).json({ emailNotFound: "Email not found" });
@@ -57,8 +58,23 @@ const logIn = async (req, res) => {
         });
 }
 
+const getUsers = async (req, res) => {
+ return  await userModel.find()
+        .then(user => {
+            console.log(user,"111");
+            res.status(200).json({success:true,user});
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: 'Failed to get user',
+                error: err
+            });
+        });
+}
+
 module.exports = {
     logIn,
-    register
+    register,
+    getUsers
 }
 

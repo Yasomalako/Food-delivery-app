@@ -9,7 +9,7 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 function LandingPage() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: ,
+    googleMapsApiKey: "AIzaSyDrwvoqJvHWLCBMtBJnwTP7B6rBzrjvHHc",
     libraries: ["places"],
   });
   const { products, productsByCategory } = useContext(ProductContext)
@@ -60,9 +60,9 @@ function LandingPage() {
           <h2 className="text-5xl">your next fresh meal delivery,made possible by us </h2>
         </div>
         <div>
-          {/* <div className="px-8 py-16">
+          <div className="px-8 py-16">
             {!isLoaded ? <div>loading...</div> : <Map />}
-          </div> */}
+          </div>
           <div>
 
             {users ? <section className="py-16 px-8 ">

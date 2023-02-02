@@ -14,7 +14,7 @@ export default function Router() {
         <div>
          
                 <Routes>
-                    <Route path='/' element={<Orders />} />
+                    <Route path='/' element={<LandingPage />} />
                     <Route path='products' element={<Products />} />
                     <Route path='profile' element={<Profile />} />
                     <Route path='logIn' element={<LoginForm />} />
